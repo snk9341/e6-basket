@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-template-rows: repeat(2, 1fr);
+    width: 66.666%;
+    margin: auto;
+}
+    
+.one{
+    grid-column: 1 / 2;
+    grid-row: 1/2;
+}
+
+.article
+{
+
+    aspect-ratio: 0.75;
+    padding : 10px;
+}
+
+a{
+    text-decoration: none;
+}

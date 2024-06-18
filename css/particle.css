@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 80%;
+}
+
+.image{
+    width: 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 50px;
+}
+
+.info{
+    width: 50%;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-align: left;
+    padding-top: 100px;
+}
+
+.titre{
+    font-size: 45px;
+    padding-bottom: 75px;
+}
+
+.desc{
+    font-size: 20px;
+}
+
+.prix{
+    font-size: 30px;
+    padding-top: 50px;
+    display: inline-block;
+}
+
+.blue{
+    background-color: cyan;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #dbe98b;
+    width: 100%;
+}
+
+.achat{
+    padding-top: 75px;
+}
+
+.user{
+    align-items: end;
+    padding-top: 175px;
+}

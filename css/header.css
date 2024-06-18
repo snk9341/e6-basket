@@ -1,0 +1,73 @@
+/*autorise le saut de ligne entre les blocks*/
+* {
+    box-sizing: border-box;
+  }
+
+  /*premet a deux block de se mettre cote à cote*/
+.ligne {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+/*permet de mettre le menu a droite*/
+.nav {
+    justify-content: end;
+    margin: auto;
+  }
+  /*gère le positionnement interne du menu et la taille de l'écriture*/
+  .nav li {
+    display: inline-block;
+    font-weight: 700;
+    font-size: larger;
+  }
+  
+  /*crée un block rouge*/
+  .block-r {
+    background-color: red;
+    border-radius: 8px;
+    box-shadow: 1px 1 px 5px #e3e3e3;
+    padding: 10px;
+  }
+  
+  /*crée un block bleu*/
+  .block-b {
+    background-color: blue;
+    border-radius: 8px;
+    box-shadow: 1px 1 px 5px #e3e3e3;
+    padding: 10px;
+  }  
+
+  /*enleve le soulignement des liens*/
+a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/*taille des différents blocks*/
+.col-3{
+  width: 25%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.col-6{
+  width: 50%;
+  padding-left: 12px;
+  padding-right: 12px;
+  justify-content: end;
+    margin: auto;
+}
+
+.col-8 {
+  width: 66.666%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.col-12 {
+  width: 100%;
+  padding-left: 150px;
+  padding-right: 150px;
+}

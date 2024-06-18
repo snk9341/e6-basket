@@ -1,0 +1,13 @@
+.container {
+  padding: auto;
+  width: 500px;
+  position: relative;
+  margin: auto;
+  border-radius: 10px;
+background-color: antiquewhite;
+text-align: center;
+}
+
+.connexion {
+    color: orange;
+}
