@@ -1,3 +1,4 @@
+<script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
 <header style="background-color: white;">
     <div class="back">
         <section class="col-12">
@@ -17,11 +18,10 @@
           ?>
           <form action="" method="GET">
             <input type="search" placeholder="Rechercher un produit" id="site-search" name="rech" />
-            <input type="submit" value="Rechercher" />
+            <input type="submit" value="rechercher" />
           </form>
 
         </div>
-
                 <ul class="nav">
                     <?php
                 if(isset($_SESSION["identifiant"])){

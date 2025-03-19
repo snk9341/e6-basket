@@ -9,7 +9,7 @@ if (count($_GET) > 0)
 {
     $recherche = $_GET["rech"];
     $sql = "select * from article where NOM like '%$recherche%'";
-$result = mysqli_query($id, $sql);
+    $result = mysqli_query($id, $sql);
 }else{
     header("location:index.php?rech=");
 }
@@ -42,7 +42,5 @@ $result = mysqli_query($id, $sql);
         }
         ?>
     </div>
-
 </body>
-
 </html>

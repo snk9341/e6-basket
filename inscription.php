@@ -18,41 +18,44 @@ if (isset($_POST["bouton"])) {
 
     $req = "select * from utilisateur where identifiant='$identifiant'";
     $res = mysqli_query($id, $req);
-    if (mysqli_num_rows($res) > 0){
+    if (mysqli_num_rows($res) > 0) {
 ?>
         <script>
             alert('cet identifiant est déjà pris');
         </script>
-<?php
- header("location:inscription.php");    
-}else{
-    $ide = true;
-}
-    $mdp=$_POST['mdp'];
+    <?php
+        header("location:inscription.php");
+    } else {
+        $ide = true;
+    }
+    $mdp = $_POST['mdp'];
 
     $mdpOK = false;
 
-    if (preg_match('/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%£^&*-]).{10,}$/',
-                    $mdp)){
-                        $mdpOK = true;
-                    }
-                    if($mdpOK && $ide){
-                        $requete = "insert into utilisateur (ID_USER,IDENTIFIANT,PASSWORD,PRENOM,NOM,MAIL,TELEPHONE,ADRESSE,VILLE,CODEPOST)
+    if (preg_match(
+        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%£^&*-]).{10,}$/',
+        $mdp
+    )) {
+        $mdpOK = true;
+    }
+    if ($mdpOK && $ide) {
+        $requete = "insert into utilisateur (ID_USER,IDENTIFIANT,PASSWORD,PRENOM,NOM,MAIL,TELEPHONE,ADRESSE,VILLE,CODEPOST)
                         values (null,'$identifiant','$mdp','$pren','$nom','$mail','$tel','$adr','$ville','$codepost')";
 
-                        mysqli_query($id, $requete);
+        mysqli_query($id, $requete);
 
-                        $_SESSION['identifiant'] = $identifiant;
+        $_SESSION['identifiant'] = $identifiant;
 
-                        header("location:index.php");
-
-                        }else{
-                            ?>
-                            <script> alert ("votre nom d'utilisateur est déjà utilisé ou votre mot de passe n'est pas assez fort");</script>
-                            <?php
-                            header("location:inscription.php");
-                        }
-                    }
+        header("location:index.php");
+    } else {
+    ?>
+        <script>
+            alert("votre nom d'utilisateur est déjà utilisé ou votre mot de passe n'est pas assez fort");
+        </script>
+<?php
+        header("location:inscription.php");
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -66,6 +69,7 @@ if (isset($_POST["bouton"])) {
     <link rel="stylesheet" href="css/header.css">
     <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
 
@@ -116,4 +120,5 @@ if (isset($_POST["bouton"])) {
         </div>
     </div>
 </body>
+
 </html>
