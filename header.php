@@ -1,4 +1,3 @@
-<script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
 <header style="background-color: white;">
     <div class="back">
         <section class="col-12">
@@ -18,7 +17,7 @@
           ?>
           <form action="" method="GET">
             <input type="search" placeholder="Rechercher un produit" id="site-search" name="rech" />
-            <input type="submit" value="rechercher" />
+            <button class="inputSearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
 
         </div>

@@ -3,8 +3,22 @@ session_start();
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require_once("connexion/connect.php");
-require_once("header.php");
-require_once("slide.php");
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/slide.css">
+    <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
+    <title>BballShop</title>
+</head>
+<?php
 if (count($_GET) > 0)
 {
     $recherche = $_GET["rech"];
@@ -13,19 +27,9 @@ if (count($_GET) > 0)
 }else{
     header("location:index.php?rech=");
 }
+    require_once("header.php");
+    require_once("slide.php");
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
 <body>
     <div class="wrapper">
         <?php

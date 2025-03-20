@@ -25,11 +25,11 @@ if(isset($_POST["bouton"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/connect.css">
     <link rel="stylesheet" href="css/header.css">
     <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
+    <title>connexion</title>
 </head>
 
 <body>

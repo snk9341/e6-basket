@@ -90,3 +90,10 @@ border-radius: 15px;
 transition: 5ms;
 }
 
+.inputSearch {
+  border: none;
+  font-size: 2vw;
+  background: transparent;
+  cursor: pointer;
+}
+

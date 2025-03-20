@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/slide.css">
-</head>
-<!DOCTYPE html>
-
-
-</head>
-<body>
-
 <div class="color">
 <div class="slideshow-container">
 
@@ -40,7 +25,7 @@
 </div>
 <br>
 
-<div style="text-align:center">
+<div style="text-align:center; padding: 1vw">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
