@@ -1,9 +1,6 @@
 <?php
-require_once("connexion/connect.php");
-require_once("header.php");
-?>
-<?php
 session_start();
+require_once("connexion/connect.php");
 if(isset($_POST["bouton"])){
     $identifiant = $_POST['identifiant'];
     $mdp = $_POST['mdp'];
@@ -31,6 +28,10 @@ if(isset($_POST["bouton"])){
     <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
     <title>connexion</title>
 </head>
+
+<?php
+require_once("header.php");
+?>
 
 <body>
     <div class="container">
