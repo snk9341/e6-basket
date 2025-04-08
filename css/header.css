@@ -1,99 +1,93 @@
-/*autorise le saut de ligne entre les blocks*/
-* {
-  box-sizing: border-box;
+.containerHeader {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
 
-/*premet a deux block de se mettre cote à cote*/
-.ligne {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+.logoSite {
+    justify-self: start;
 }
 
-/*permet de mettre le menu a droite*/
-.nav {
-  justify-content: end;
-  margin: auto;
-}
-/*gère le positionnement interne du menu et la taille de l'écriture*/
-.nav li {
-  display: inline-block;
-  font-weight: 700;
-  font-size: larger;
+.imgLogoSite {
+    height: 8vh;
+    aspect-ratio: 1;
+    margin-left: 12vw;
 }
 
-/*crée un block rouge*/
-.block-r {
-  background-color: red;
-  border-radius: 8px;
-  box-shadow: 1px 1 px 5px #e3e3e3;
-  padding: 10px;
-}
-
-/*crée un block bleu*/
-.block-b {
-  background-color: blue;
-  border-radius: 8px;
-  box-shadow: 1px 1 px 5px #e3e3e3;
-  padding: 10px;
-}  
-
-/*enleve le soulignement des liens*/
-a {
-text-decoration: none;
-color: white;
-}
-
-
-/*taille des différents blocks*/
-.col-3{
-width: 25%;
-padding-left: 12px;
-padding-right: 12px;
-}
-
-.col-6{
-width: 50%;
-padding-left: 12px;
-padding-right: 12px;
-justify-content: end;
-  margin: auto;
-}
-
-.col-8 {
-width: 66.666%;
-padding-left: 12px;
-padding-right: 12px;
-}
-
-.col-12 {
-width: 100%;
-padding-left: 150px;
-padding-right: 150px;
-}
-
-input[type=search]{
-justify-content: center;
-font-size: larger;
-border: grey;
-border-radius: 15px;
-padding-left:75px;
-padding-right:75px;
-padding-top:20px;
-padding-bottom:20px;
-margin: 25px;
-}
-
-input[type=search]:hover{
-border: grey;
-border-radius: 15px;
-transition: 5ms;
+#search {
+    border: none;
+    width: 17vw;
+    height: 5.5vh;
+    border-radius: 2vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    margin-right: 1vw;
+    font-size: 1.5vh;
 }
 
 .inputSearch {
-  border: none;
-  font-size: 2vw;
-  background: transparent;
-  cursor: pointer;
+    height: 4vh;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border: none;
+    font-size: 1.7vw;
 }
 
+.menu {
+    justify-self: end;
+    display: flex;
+    margin-right: 7vw;
+    align-items: center;
+}
+
+.basket {
+    color: white;
+    background-color: blue;
+    padding: 1.5vh;
+    border-radius: 0.5vw;
+    margin-right: 1vw;
+}
+
+.profil {
+    font-weight: 700;
+    font-size: larger;
+    color: white;
+    background-color: red;
+    padding: 1.5vh;
+    border-radius: 0.5vw;
+    margin-right: 1vw;
+}
+
+.searchDiv {
+    display: flex;
+    align-items: center;
+}
+
+.searchBar {
+    justify-self: center;
+}
+
+.inputSearch:hover {
+    cursor: pointer;
+}
+
+.message {
+    font-weight: 700;
+    font-size: larger;
+    color: white;
+    background-color: green;
+    padding: 1.5vh;
+    border-radius: 0.5vw;
+    margin-right: 1vw;
+}
+
+.nameSite {
+    font-size: 5vw;
+    font-weight: 500;
+    font-family: "Allura", cursive;
+    font-style: normal;
+}

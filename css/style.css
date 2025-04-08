@@ -1,13 +1,9 @@
-* {
-    box-sizing: border-box;
-}
-
 .wrapper{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 1vw;
     grid-template-rows: repeat(2, 1fr);
-    width: 66.666%;
+    width: 66.666vw;
     margin: auto;
 }
     
@@ -25,4 +21,7 @@
 
 a{
     text-decoration: none;
+}
+.aText {
+    color: black;
 }

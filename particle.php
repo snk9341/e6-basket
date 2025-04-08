@@ -4,13 +4,16 @@ error_reporting(E_ALL);
 ini_set("display_errors", 1);
 require_once("connexion/connect.php");
 $ID_ARTICLE = $_GET["ID_ARTICLE"];
-$req = "select a.NOM as 'artNom', a.DESCRIPTION as artDESC, a.PRIX as artPRIX,a.nomimage,a.ID_ARTICLE as idArticle, u.NOM as 'utiNom', u.PRENOM, m.MARQUE, a.ID_USER as idUser from article a JOIN utilisateur u on a.ID_USER = u.ID_USER join marque m on a.ID_MARQUE = m.ID_MARQUE where a.ID_ARTICLE='$ID_ARTICLE'";
+$req = "SELECT nom, description, prix, nomimage, ID_ARTICLE, ID_USER from article WHERE ID_ARTICLE ='$ID_ARTICLE'";
 $res = mysqli_query($id,$req);
-$data = mysqli_fetch_assoc($res);
-$idUser = $data["idUser"];
-$idArticle = $data["idArticle"];
-?>
+$dataArticle = mysqli_fetch_assoc($res);
+$idUser = $dataArticle["ID_USER"];
+$idArticle = $dataArticle["ID_ARTICLE"];
 
+$sqlUser = "SELECT nom FROM utilisateur WHERE ID_USER = '$idUser'";
+$getUser = mysqli_query($id, $sqlUser);
+$dataUser = mysqli_fetch_assoc($getUser);
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,8 +24,11 @@ $idArticle = $data["idArticle"];
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/particle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
-    <title><?=$data["artNom"]?></title>
+    <title><?=$dataArticle["nom"]?></title>
 </head>
 
 <?php
@@ -42,20 +48,22 @@ function addToBasket($id, $idUser, $idArticle, $nbrArticle) {
             </div>
             <div class="info">
                 <div class="titre">
-                    <?=$data["artNom"];?>
+                    <?=$dataArticle["nom"];?>
                 </div>
                 <div class="desc">
-                    <?=$data["artDESC"];?>
+                    <?=$dataArticle["description"];?>
                 </div>
                 <div class="prix">
-                    <p class="blue"><?=$data["artPRIX"];?>€</p>
+                    <p class="blue"><?=$dataArticle["prix"];?>€</p>
                 </div>
                 <div class="achat">
-                    <input type="number" name="nombre article" value="1">
-                    <button onclick="<?=addToBasket($id, $idUser, $idArticle, 1)?>">Ajouter au panier</button>
+                    <form action="panier.php" method="get">
+                        <input type="number" name="nombre_article" value="1">
+                        <button >Ajouter au panier</button>
+                    </form>
                 </div>
                 <div class="user">
-                    mis en vente par: <?=$data["utiNom"];?>
+                    mis en vente par: <?=$dataUser["nom"];?>
                 </div>
             </div>
     </div>

@@ -30,7 +30,7 @@ if(isset($_POST["bouton"])){
 </head>
 
 <?php
-require_once("header.php");
+require_once("header2.php");
 ?>
 
 <body>
