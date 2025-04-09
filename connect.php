@@ -4,9 +4,7 @@ require_once("connexion/connect.php");
 if(isset($_POST["bouton"])){
     $identifiant = $_POST['identifiant'];
     $mdp = $_POST['mdp'];
-    $req = "select * from utilisateur
-            where identifiant='$identifiant'
-            and password='$mdp'";
+    $req = "select * from utilisateur where identifiant='$identifiant' and password='$mdp'";
     $res = mysqli_query($id,$req);
     if(mysqli_num_rows($res)>0){
         $_SESSION["identifiant"] = $identifiant;
