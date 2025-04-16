@@ -3,20 +3,14 @@
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
     require_once("connexion/connect.php");  
-    
+
     $sql = "SELECT ID_USER FROM utilisateur WHERE IDENTIFIANT = '".$_SESSION['identifiant']."'";
     $get = mysqli_query($id, $sql);
     $data = mysqli_fetch_assoc($get);
 
-    $sqlBasket = "SELECT article_ID_ARTICLE FROM panier WHERE utilisateur_ID_USER = '".$data['ID_USER']."'";
+    $sqlBasket = "SELECT * FROM panier WHERE utilisateur_ID_USER = '".$data['ID_USER']."'";
     $getBasket = mysqli_query($id, $sqlBasket);  
-
-
-    while (($dataPanier = mysqli_fetch_array($getBasket)) == true){
-        $sqlPanier = "SELECT nom, PRIX, nomimage FROM article WHERE ID_ARTICLE = '".$getBasket['article_ID_ARTICLE']."'";
-        $getPanier = mysqli_query($id, $sqlPanier);
-        $dataPanier1 = mysqli_fetch_assoc($getPanier);
-    }
+    $dataPanier = mysqli_fetch_array($getBasket);
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/panier.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/1a76fbbd1a.js" crossorigin="anonymous"></script>
     <title>votre panier</title>
 </head>
@@ -33,6 +29,10 @@
     require_once('header2.php');
 ?>
 <body>
-    <h1><?=$_SESSION["identifiant"]?></h1>
+    <div class="panierContainer">
+        <div class="panier">
+            <h1 id="mybasket">Votre panier :</h1>
+        </div>
+    </div>
 </body>
 </html>

@@ -11,9 +11,7 @@ if (isset($_POST["bouton"])) {
     $nom = $_POST['nom'];
     $mail = $_POST['mail'];
     $tel = $_POST['tel'];
-    $adr = $_POST['adresse'];
-    $ville = $_POST['ville'];
-    $codepost = $_POST['codepost'];
+    $livraison = $_POST['livraison'];
 
 
     $req = "select * from utilisateur where identifiant='$identifiant'";
@@ -33,14 +31,14 @@ if (isset($_POST["bouton"])) {
     $mdpOK = false;
 
     if (preg_match(
-        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%£^&*-]).{10,}$/',
+        '/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#.?!@$%£^&*-]).{10,}$/',
         $mdp
     )) {
         $mdpOK = true;
     }
     if ($mdpOK && $ide) {
-        $requete = "insert into utilisateur (ID_USER,IDENTIFIANT,PASSWORD,PRENOM,NOM,MAIL,TELEPHONE,ADRESSE,VILLE,CODEPOST)
-                        values (null,'$identifiant','$mdp','$pren','$nom','$mail','$tel','$adr','$ville','$codepost')";
+        $requete = "insert into utilisateur (ID_USER,IDENTIFIANT,PASSWORD,PRENOM,NOM,MAIL,TELEPHONE,Livraison)
+                        values (null,'$identifiant','$mdp','$pren','$nom','$mail','$tel','$livraison')";
 
         mysqli_query($id, $requete);
 
@@ -107,13 +105,7 @@ if (isset($_POST["bouton"])) {
                     <input type="tel" name="tel" placeholder="numéro de téléphone" id="tel" required><br><br>
                 </label>
                 <label for="adresse">
-                    adresse<br> <input type="text" name="adresse" placeholder="ex: 1 rue de la musique" id="adresse" required><br>
-                </label>
-                <label for="ville">
-                    ville <br><input type="text" name="ville" placeholder="ex: Paris" id="ville" required><br>
-                </label>
-                <label for="codepost">
-                    code postal <br><input type="text" name="codepost" placeholder="ex: 75000" id="codepost" required><br>
+                    adresse de livraison<br> <input type="text" name="livraison" placeholder="ex: 1 rue de la musique, paris, 75000" id="livraison" required><br>
                 </label>
                 <input type="submit" value="inscription" name="bouton">
             </form>

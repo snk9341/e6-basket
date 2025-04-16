@@ -1,0 +1,14 @@
+.panierContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.panier {
+    border: solid 1px grey;
+    width: 80vw;
+}
+
+#mybasket {
+    font-size: 4vh;
+}
