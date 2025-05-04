@@ -46,9 +46,7 @@ Développé par snk9341 dans le cadre d’un exercice complet autour de PHP, SQL
 ---
 ---
 
-### 🇬🇧 `README-ecommerce-en.md`
 
-```markdown
 # 🛒 E-commerce Website – PHP & MySQL
 
 ## 📋 Description
