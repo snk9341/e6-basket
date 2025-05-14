@@ -10,7 +10,6 @@
 
     $sqlBasket = "SELECT * FROM panier WHERE utilisateur_ID_USER = '".$data['ID_USER']."'";
     $getBasket = mysqli_query($id, $sqlBasket);  
-    $dataPanier = mysqli_fetch_array($getBasket);
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +31,24 @@
     <div class="panierContainer">
         <div class="panier">
             <h1 id="mybasket">Votre panier :</h1>
+        </div>
+        <div class="panierArticle">
+            <ul class="listeArticlePanier">
+                <?php
+                    while ($dataPanier = mysqli_fetch_array($getBasket)) {
+                        $sqlImage = "SELECT nomimage FROM article WHERE ID_ARTICLE = '".$dataPanier['article_ID_ARTICLE']."'";
+                        $getImage = mysqli_query($id, $sqlImage);
+                        $dataImage = mysqli_fetch_assoc($getImage);
+                ?>
+                <li class="liArticlePanier">
+                    <span class="imgArticlePanier"><img src="/image/<?=$dataImage["nomimage"]?>" alt=""></span>
+                    <span class="nameArticlePanier"><?=$dataPanier["nomArticle"]?></span>
+                    <span class="prixArticlePanier"><?=$dataPanier["prix"]?>€</span>
+                </li>
+                <?php
+                    }
+                ?>
+            </ul>
         </div>
     </div>
 </body>
