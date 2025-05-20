@@ -17,9 +17,6 @@
             <div class="profil">
                 <a href="profil.php" style="color: white; text-decoration: none;"><i class="fa-solid fa-user"></i></a>
             </div>
-            <div class="message">
-                <a href="message.php" style="color: white; text-decoration: none;"><i class="fa-regular fa-comment"></i></a>
-            </div>
         <?php
             }else{
         ?>

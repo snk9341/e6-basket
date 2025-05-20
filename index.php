@@ -32,7 +32,6 @@ if (count($_GET) > 0)
     header("location:index.php?SearchBar=");
 }
     require_once("header.php");
-    require_once("slide.php");
 ?>
 <body>
     <div class="wrapper">

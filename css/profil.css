@@ -1,0 +1,68 @@
+.container {
+    width: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    height: 90vh;
+}
+
+.divTitreProfil {
+    margin-top: 5%;
+}
+
+.titreProfil {
+    font-size: 4vh;
+    margin-bottom: 5vh;
+    margin-left: 5vw;
+}
+
+.divListeAnnonce {
+    width: 100%;
+    height: 95%;
+}
+
+.listeArticlePanier {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1vw;
+    grid-template-rows: repeat(2, 1fr);
+    width: 80%;
+    margin: auto;
+}
+
+.divListeAnnonce{
+    aspect-ratio: 0.75;
+    padding: 10px;
+}
+
+.imgArticlePanier img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10%;
+}
+
+.liArticlePanier {
+    background-color: lightgrey;
+    padding: 1%;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    border-radius: 4%;
+}
+
+.nameArticlePanier {
+    font-size: 1.5em;
+    margin-bottom: 2%;
+}
+
+.prixArticlePanier {
+    font-size: 1.2em;
+}
+
+.liArticlePanier:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

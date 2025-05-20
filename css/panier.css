@@ -6,19 +6,22 @@
 }
 
 .panier {
-    border: solid 1px grey;
     width: 80vw;
 }
 
 #mybasket {
     font-size: 4vh;
+    margin-bottom: 5vh;
 }
 
-.listArticlePanier {
-    width: 100%;
+.panierArticle {
+    width: 80vw;
+}
+
+.listeArticlePanier {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
 }
 
 .liArticlePanier {
@@ -39,11 +42,36 @@
 }
 
 .nameArticlePanier {
-    margin-left: 7vw;
+    width: 25%;
+    margin-left: 5%;
     font-size: 2em;
 }
 
 .prixArticlePanier {
-    margin-left: 6vw;
+    width: 10%;
+    margin-left: 5%;
     font-size: 1.7em;
+}
+
+.nombreArticlePanier {
+    width: 10%;
+    margin-left: 5%;
+    font-size: 1.3em;
+}
+
+.deleteArticle {
+    width: 25%;
+    margin-left: 5%;
+}
+
+.buttonDelete {
+    height: 5vh;
+    aspect-ratio: 1;
+    background-color: transparent;
+    border-radius: 2.5vh;
+    border: solid 1px black;
+}
+
+.buttonDelete:hover {
+    cursor: pointer;
 }

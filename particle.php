@@ -57,7 +57,10 @@ function addToBasket($id, $idUser, $idArticle, $nbrArticle) {
                     <p class="blue"><?=$dataArticle["prix"];?>€</p>
                 </div>
                 <div class="achat">
-                    <form action="panier.php" method="get">
+                    <form action="panier.php" method="POST">
+                        <input type="hidden" name="id_article" value="<?=$dataArticle["ID_ARTICLE"]?>">
+                        <input type="hidden" name="name_article" value="<?=$dataArticle["nom"]?>">
+                        <input type="hidden" name="prix_article" value="<?=$dataArticle["prix"]?>">
                         <input type="number" name="nombre_article" value="1">
                         <button >Ajouter au panier</button>
                     </form>
